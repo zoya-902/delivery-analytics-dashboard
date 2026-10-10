@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div id="DashBoard">
+        <p id="dashboard-error" role="alert"></p>
+        <header class="dashboard-header">
+          <div>
+            <h1>Delivery Analytics</h1>
+            <p>Track orders, revenue, and delivery performance</p>
+          </div>
+        </header>
+        <div id="KPI-card">
+          <div id="total-orders">
+            <h3>📦 Total Orders</h3>
+            <p id="total-order-value">--</p>
+          </div>
+          <div id="total-revenue">
+            <h3>💰 Total Revenue</h3>
+            <p id="total-revenue-value">--</p>
+          </div>
+          <div id="avg-delivery">
+            <h3>⏱️ Avg. Delivery Time</h3>
+            <p id="avg-delivery-value">--</p>
+          </div>
+        </div>
+        <div id="two">
+          <div id="orders-by-status">
+            <h3>Order by status</h3>
+            <canvas id="status-chart"></canvas>
+          </div>
+          <div id="orders-by-city">
+            <h3>Order by city</h3>
+            <canvas id="city-chart"></canvas>
+          </div>
+        </div>
+        <div id="three">
+          <div id="revenue-by-city">
+            <h3>Revenue by City</h3>
+            <canvas id="revenue-city-chart"></canvas>
+          </div>
+          <div id="agent-performance">
+            <h3>Agent Performance</h3>
+            <canvas id="agent-chart"></canvas>
+          </div>
+        </div>
+        <div id="monthly-revenue">
+          <h3>Monthly revenue</h3>
+          <canvas id="monthly-revenue-chart"></canvas>
+        </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+      <script src="script.js"></script>
+    </main>
+  </body>
+</html>

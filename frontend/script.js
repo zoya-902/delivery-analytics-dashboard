@@ -1,4 +1,4 @@
-fetch("http://127.0.0.1:8000/analytics/summary")
+fetch("https://delivery-analytics-dashboard.onrender.com/analytics/summary")
   .then((response) => {
     if (!response.ok) {
       throw new Error("API error: ${response.status}");
@@ -20,7 +20,9 @@ fetch("http://127.0.0.1:8000/analytics/summary")
       "Unable to load data. Please check the server and refresh the page";
   });
 
-fetch("http://127.0.0.1:8000/analytics/status").then((response) =>
+fetch(
+  "https://delivery-analytics-dashboard.onrender.com/analytics/status",
+).then((response) =>
   response.json().then((data) => {
     const labels = data.map((item) => item.status);
     const values = data.map((item) => item.total_orders);
@@ -32,7 +34,9 @@ fetch("http://127.0.0.1:8000/analytics/status").then((response) =>
   }),
 );
 
-fetch("http://127.0.0.1:8000/analytics/cities").then((response) =>
+fetch(
+  "https://delivery-analytics-dashboard.onrender.com/analytics/cities",
+).then((response) =>
   response.json().then((data) => {
     const labels = data.map((item) => item.city);
     const values = data.map((item) => item.total_orders);
@@ -42,21 +46,13 @@ fetch("http://127.0.0.1:8000/analytics/cities").then((response) =>
         labels: labels,
         datasets: [{ label: "total-order", data: values }],
       },
-      // plugins: [ChartDataLabels],
-
-      // options: {
-      //   plugins: {
-      //     // Hover tooltip remove
-      //     tooltip: {
-      //       enabled: false,
-      //     },
-      //   },
-      // },
     });
   }),
 );
 
-fetch("http://127.0.0.1:8000/analytics/city-revenue")
+fetch(
+  "https://delivery-analytics-dashboard.onrender.com/analytics/city-revenue",
+)
   .then((response) => response.json())
   .then((data) => {
     const labels = data.map((item) => item.city);
@@ -76,7 +72,7 @@ fetch("http://127.0.0.1:8000/analytics/city-revenue")
     });
   });
 
-fetch("http://127.0.0.1:8000/analytics/agents")
+fetch("https://delivery-analytics-dashboard.onrender.com/analytics/agents")
   .then((response) => response.json())
   .then((data) => {
     const labels = data.map((item) => item.name);
@@ -96,7 +92,9 @@ fetch("http://127.0.0.1:8000/analytics/agents")
     });
   });
 
-fetch("http://127.0.0.1:8000/analytics/monthly-revenue")
+fetch(
+  "https://delivery-analytics-dashboard.onrender.com/analytics/monthly-revenue",
+)
   .then((response) => response.json())
   .then((data) => {
     const labels = data.map((item) => item.month);
